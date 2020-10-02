@@ -1,0 +1,38 @@
+################Managing Deployments Using Kubernetes Engine##################
+
+kubectl explain deployment
+kubectl explain deployment --recursive
+
+kubectl explain deployment.metadata.name
+
+Create a deployment
+
+vi deployments/auth.yaml
+
+i 
+
+...
+containers:
+- name: auth
+  image: kelseyhightower/auth:1.0.0
+...
+
+:wq
+
+cat deployments/auth.yaml
+
+kubectl create -f deployments/auth.yaml
+
+kubectl get deployments
+
+kubectl get replicasets
+
+kubectl get pods
+
+kubectl create -f services/auth.yaml
+
+kubectl create -f deployments/hello.yaml
+kubectl create -f services/hello.yaml
+
+
+
